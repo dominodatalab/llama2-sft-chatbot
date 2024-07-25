@@ -1,2 +1,9 @@
 # This is not a full list, its used with the LLM DSE
 ctranslate2==3.17.1
+accelerate==0.33.0
+peft==0.11.1
+trl==0.9.6
+transformers==4.43.1
+bitsandbytes==0.41.3
+unsloth @ git+https://github.com/unslothai/unsloth.git
+xformers<0.0.27
