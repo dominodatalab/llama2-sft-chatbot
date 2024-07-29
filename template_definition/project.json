@@ -1,12 +1,12 @@
 {
-  "title": "Chatbot using Fine Tuned LLM",
+  "title": "Use Llama3 to Build a Fine-Tuned Chatbot LLM",
   "id": "Chatbot using Fine Tuned LLM",
-  "description": "This template demonstrates how to build a Chatbot by fine-tuning the Llama2 model using Supervised Fine Tuning (SFT).",
+  "description": "This template demonstrates how to build a Chatbot by fine-tuning the Llama2 or Llama3 model using Supervised Fine Tuning (SFT).",
   "base64Logo": "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEwMCIgdmlld0JveD0iMCAwIDEyMCAxMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHg9IjU0IiB5PSIyMiIgd2lkdGg9IjU0IiBoZWlnaHQ9IjEwIiByeD0iNSIgZmlsbD0iIzY3ODBGRiIvPgo8cmVjdCB4PSIxMi41IiB5PSI0MC41IiB3aWR0aD0iNzMiIGhlaWdodD0iMTkiIHJ4PSIzLjUiIGZpbGw9IiNGNUY1RjUiIHN0cm9rZT0iI0UzRTNFMyIvPgo8cmVjdCB4PSIzNCIgeT0iNjgiIHdpZHRoPSI3NCIgaGVpZ2h0PSIxMCIgcng9IjQiIGZpbGw9IiM2NzgwRkYiLz4KPC9zdmc+Cg==",
   "categories": [
     "Chatbot",
     "Fine Tuning",
-    "LLM"
+    "Llama"
   ],
   "mainRepository": {
     "uri": "https://github.com/dominodatalab/llama2-sft-chatbot",
@@ -21,6 +21,15 @@
     "link": "https://domino.ai"
   },
   "models": [
+    {
+      "name": "Llama3.1",
+      "link": "https://huggingface.co/NousResearch/Hermes-2-Pro-Llama-3-8B",
+      "size": {
+        "value": 16,
+        "units": "GB"
+      },
+      "source": null
+    },
     {
       "name": "Llama2",
       "link": "https://huggingface.co/NousResearch/Nous-Hermes-llama-2-7b",
@@ -43,13 +52,21 @@
   "recommended": false,
   "prerequisites": [
     {
-      "value": "Please note that in order to run the model API you need ctranslate2 3.17.1 which is not part of the default environment of the project. You will have to add this dependency to the environment Dockerfile instructions.",
+      "value": "[Optional]: Please note that in order to run the model API you need ctranslate2 3.17.1 which is not part of the default environment of the project. You will have to add this dependency to the environment Dockerfile instructions.",
       "link": "https://github.com/dominodatalab/llama2-sft-chatbot#model-api-calls"
+    },
+    {
+      "value": "A Hugging Face User Access Token is required to run the LLama3 notebook.",
+      "link": "https://huggingface.co/docs/hub/en/security-tokens"
+    },
+    {
+      "value": "Github Personal Access Token (PAT) Authentication in Domino",
+      "link": "https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/"
     }
   ],
   "goals": null,
   "hardwareTier": {
-    "value": "A GPU with >=16GB of VRAM is recommended. It was tested on a V100 with 16GB VRAM.",
+    "value": "A GPU with >=16GB of VRAM is recommended. It was tested on a V100 with 16GB VRAM. Storage of at least 25GB is recommended",
     "link": null
   },
   "environmentKey": null,
@@ -59,7 +76,7 @@
   },
   "importedRepositories": null,
   "supportedDominoVersions": [
-    "5.10.0"
+    "Tested on 5.11.0"
   ],
   "projectSettings": null,
   "test": {
