@@ -7,6 +7,7 @@ This template is licensed under Apache 2.0 and contains the following components
 * mlflow [Apache License 2.0](https://github.com/mlflow/mlflow/blob/master/LICENSE.txt)
 * accelerate [Apache License 2.0](https://github.com/huggingface/accelerate/blob/main/LICENSE)
 * bitsandbytes [MIT License](https://github.com/TimDettmers/bitsandbytes/blob/main/LICENSE)
+* pytorch [Caffe 2](https://github.com/pytorch/pytorch/blob/main/LICENSE)
 * datasets [Apache License 2.0](https://github.com/huggingface/datasets/blob/main/LICENSE)
 * peft [Apache License 2.0](https://github.com/huggingface/peft/blob/main/LICENSE)
 * streamlit [Apache License 2.0](https://github.com/streamlit/streamlit/blob/develop/LICENSE)
@@ -27,7 +28,7 @@ In this demo project we use the [mlabonne/guanaco-llama2-1k](https://huggingface
 
 The assets available in this project are:
 
-*llama3_1_guanco.ipynb* - A notebook, illustrating the process of finetuning [Meta-Llama-3.1-8B](https://huggingface.co/meta-llama/Meta-Llama-3.1-8B) on the [mlabonne/guanaco-llama2-1k] (https://huggingface.co/datasets/mlabonne/guanaco-llama2-1k) dataset
+*llama3_1_guanco.ipynb* - A notebook, illustrating the process of finetuning [Meta-Llama-3.1-8B](https://huggingface.co/NousResearch/Meta-Llama-3.1-8B) on the [mlabonne/guanaco-llama2-1k] (https://huggingface.co/datasets/mlabonne/guanaco-llama2-1k) dataset
 
 
 *`model.py`* - A python file which is used to deploy the fine-tuned model as a Domino model API .
@@ -43,18 +44,6 @@ The assets available in this project are:
 Github Personal Access Token (PAT) Authentication in Domino [Domino PAT Setup](https://docs.dominodatalab.com/en/latest/user_guide/314004/import-git-repositories/)
 
 
-### Environment Requirements 
-Use a Domino Standard Enviornment during set up.
-
-### Hardware Requirements
-Use a large GPU Hardware Tier, this is required, reccomended 22GB RAM. 
-
-
-## Set up instructions Required if using the API and Streamlit application
-## Model API calls
-
-
-
 This project requires the following [compute environments](https://docs.dominodatalab.com/en/latest/user_guide/f51038/environments/) to be present. Please ensure the "Automatically make compatible with Domino" checkbox is selected while creating the environment.
 
 ### Hardware Requirements 
@@ -66,6 +55,20 @@ This project will run on any Nvidia GPU with >=24GB of VRAM. Also ensure that th
 **Environment Base**
 ***base image :*** `nvcr.io/nvidia/pytorch:23.10-py3`
 
+### Model API Instructions 
+The model.py file is used to deploy the API. The function to invoke is generate. 
+
+
+When setting up the Model endpoint, the following request can be used as a sample test: 
+
+{
+  "data": {
+    "prompt": "Why is the sky blue."
+    "max_new_tokens": 250
+  }
+}
+
+## Dockerfile
 ***Dockerfile instructions*** (not needed if using the Domino AI Hub template)
 ```
 RUN pip install "transformers>=4.43.2" "peft>=0.7.1,!=0.11.0" "trl>=0.7.9,<0.9.0" \
@@ -96,4 +99,3 @@ vscode:
     requireSubdomain: false
 ```
 Please change the value in `start` according to your Domino version. This repo has been tested with Domino 5.10.0 and 5.11.0 .
-
