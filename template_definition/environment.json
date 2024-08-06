@@ -1,6 +1,6 @@
 {
   "title": "Base environment for fine tuning llama3.1",
-  "id": "Base environment for fine tuning llama3.1",
+  "id": "Chatbot using Fine Tuned LLM",
   "environmentBaseImage": "nvcr.io/nvidia/pytorch:23.10-py3",
   "description": "This environment is the base image that has the CUDA drivers and PyTorch needed for finetuning an LLM"
 }
