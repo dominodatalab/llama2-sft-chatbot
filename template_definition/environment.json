@@ -1,4 +1,6 @@
 {
-  "uri": "https://github.com/dominodatalab/Ecosystem-Template-Project-Hub-Gpu-Environment/tree/3dfab70225d0489c44410b17f9d32fce7a75464a",
-  "commitId": "3dfab70225d0489c44410b17f9d32fce7a75464a"
+  "title": "Base environment for fine tuning llama3.1",
+  "id": "Chatbot using Fine Tuned LLM",
+  "environmentBaseImage": "nvcr.io/nvidia/pytorch:23.10-py3",
+  "description": "This environment is the base image that has the CUDA drivers and PyTorch needed for finetuning an LLM"
 }
