@@ -48,7 +48,7 @@ This project requires the following [compute environments](https://docs.dominoda
 
 ### Hardware Requirements 
 
-This project will run on any Nvidia GPU with >=24GB of VRAM. Also ensure that the `Workspace and Jobs Volume Size` setting of the workspace is set to 100GB as the model files and datasets can get large.
+This project will run on any Nvidia GPU with >=24GB of VRAM. Also ensure that the [`Workspace and Jobs Volume Size`] (https://docs.dominodatalab.com/en/latest/user_guide/0ea71e/change-the-workspace-volume-size/) setting of the workspace is set to 100GB as the model files and datasets can get large.
 
 ### Environment Requirements
 
